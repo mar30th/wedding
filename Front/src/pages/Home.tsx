@@ -10,14 +10,15 @@ const Home = () => {
   return (
     <div className="">
       <Banner />
-      <Intro />
-      <Portfolio />
       <div className="md:w-4/5 m-auto">
         <div className="py-4">
           <Carousel />
           <Gallery />
         </div>
       </div>
+      {/* <Intro /> */}
+      <Portfolio />
+
       <Break />
     </div>
   );

@@ -1,7 +1,9 @@
 import React from "react";
 import P1 from "../../assets/img/banner.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Gallery = () => {
+  const navigate = useNavigate();
   return (
     <div className="mx-auto">
       <div className="py-5 grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -86,6 +88,8 @@ const Gallery = () => {
           </div>
         </div>
       </div>
+      <button type="button" className="my-4 bg-theme text-white font-semibold py-4 px-9 focus:outline-none rounded-full border hover:bg-white hover:text-black hover:border-theme hover:text-theme" onClick={() => {navigate('/gallery')}}>Find Out More</button>
+
     </div>
   );
 };

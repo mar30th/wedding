@@ -2,7 +2,7 @@ import React from "react";
 
 const Intro = () => {
   return (
-    <div className="grid md:grid-cols-12 py-24 p-1">
+    <div className="grid md:grid-cols-12  p-1">
       <div className="md:col-span-8 py-5 md:col-start-3">
         <div className="">
           <img

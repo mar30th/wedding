@@ -14,14 +14,15 @@ const Carousel = () => {
           />
         </div>
         <div>
-          <h1 className="text-2xl md:text-5xl md:my-5 my-2 font-semibold">Our Best Moments</h1>
+          {/* <h1 className="text-2xl md:text-5xl md:my-5 my-2 font-semibold">Our Best Moments</h1> */}
+          <h1 className="text-2xl md:text-5xl font-semibold my-4 md:my-12">We're getting married!</h1>
+{/* 
           <p className="text-center md:my-5">
             We are grateful to God and to destiny for meeting you in this life.
             My love, thank you for those beautiful moments we shared together.
             Rejoice us!
-          </p>
+          </p> */}
         </div>
-        <button type="button" className="my-4 bg-theme text-white font-semibold py-4 px-9 focus:outline-none rounded-full border hover:bg-white hover:text-black hover:border-theme" onClick={() => {navigate('/gallery')}}>Find Out More</button>
       </div>
       <div className="relative">
         <div>

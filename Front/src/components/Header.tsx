@@ -1,14 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/img/logo3.png"
+
 
 const Header = () => {
   const navigate = useNavigate()
   return (
-    <nav className="bg-white">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className="bg-white md:w-4/5 mx-auto">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
 
           <span className="self-center text-2xl font-semibold whitespace-nowrap cursor-pointer" onClick={() => {navigate('/')}}>
-            Mr.Dong
+            <img src={logo} className="h-[100px] mr-3" alt="" />
           </span>
         <button
           data-collapse-toggle="navbar-default"
