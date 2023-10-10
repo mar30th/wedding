@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { GetFetchGallery } from "../../services/wedding.services";
-import { FetchGallery } from "./thunkActions";
+import { GetFetchBanner, GetFetchGallery } from "../../services/wedding.services";
+import { FetchBanner, FetchGallery } from "./thunkActions";
 
 
 type weddingInitialState = {
+    banner?: GetFetchBanner;
     galleryList?: GetFetchGallery;
 }
 
@@ -21,5 +22,8 @@ export const { reducer: weddingReducer, actions: weddingActions} = createSlice({
         .addCase(FetchGallery.fulfilled, (state, action) => {
             state.galleryList = action.payload
         })
+        // .addCase(FetchBanner.fulfilled, (state, action) => {
+        //     state.banner = action.payload
+        // })
     }
 })
