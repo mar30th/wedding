@@ -5,7 +5,14 @@ const Bride = () => {
   return (
     <div className="grid px-4 md:grid-cols-2 md:px-0 md:mb-0 mb-2">
       <div className="md:col-span-1">
-        <img src={p1} alt="" style={{ height: "444px", width: "566px" }} />
+        <div className="">
+          <img
+            src={p1}
+            alt=""
+            style={{ height: "444px", width: "566px" }}
+            className="transform scale-100 hover:opacity-70 transition-transform duration-300 ease-in-out rounded-t md:round-0"
+          />
+        </div>
       </div>
       <div className="flex items-center justify-center text-left p-4 align-self-center allow-drop border border-t-0 border-theme md:border-0">
         <div className="child text-center">
@@ -37,8 +44,10 @@ const Bride = () => {
                       Pleiku Palace
                       <br />
                       <span className="opacity-50 text-sm">
-                        Vien Ngoc Xanh 1 Lobby<br />
-                        03 Nguyen Tat Thanh Street, Ward Hoa Lu, Pleiku City, Gia Lai
+                        Vien Ngoc Xanh 1 Lobby
+                        <br />
+                        03 Nguyen Tat Thanh Street, Ward Hoa Lu, Pleiku City,
+                        Gia Lai
                       </span>
                     </h3>
                     <button
@@ -89,5 +98,6 @@ const Bride = () => {
     </div>
   );
 };
+
 
 export default Bride;

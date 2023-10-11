@@ -3,12 +3,12 @@ import p1 from "../../assets/img/1.jpg";
 
 const Groom = () => {
   return (
-    <div className="grid px-4 md:grid-cols-2 md:px-0">
-      <div className="md:col-span-1 md:order-last">
-        <img src={p1} alt="" style={{ height: "444px", width: "566px" }} />
+    <div className="parent grid px-4 md:grid-cols-2 md:px-0">
+      <div className="child md:col-span-1 md:order-last">
+        <img src={p1} alt="" style={{ height: "444px", width: "566px" }}/>
       </div>
       <div className="flex items-center justify-center text-left p-4 align-self-center allow-drop border border-t-0 border-theme md:border-0">
-        <div className="child text-center">
+        <div className="text-center">
           <p>Saturday | 02-12-2023 | 06:00 PM.</p>
           <h3 className="text-4xl py-5 text-center">Groom's Party</h3>
             {/* Modal toggle */}

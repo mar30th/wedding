@@ -3,6 +3,7 @@ import p1 from "../../assets/img/1.jpg";
 import p2 from "../../assets/img/2.jpg";
 import Groom from "./Groom";
 import Bride from "./Bride";
+import ShowCase from "./ShowCase";
 
 const Portfolio = () => {
   return (
@@ -20,8 +21,10 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-      <Bride />
-      <Groom />
+      <div>
+        <Bride />
+        <Groom />
+      </div>
     </div>
   );
 };
