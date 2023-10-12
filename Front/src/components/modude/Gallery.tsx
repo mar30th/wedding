@@ -3,6 +3,7 @@ import P1 from "../../assets/img/banner.jpg";
 import { useNavigate } from "react-router-dom";
 import Fancybox from "../Fancybox";
 import ShowCase from "./ShowCase";
+import Fading from "./Fading";
 
 const Gallery = () => {
   const navigate = useNavigate();
@@ -33,7 +34,8 @@ const Gallery = () => {
           },
         }}
       >
-        <div className="py-5 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <Fading />
+        {/* <div className="py-5 grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="grid gap-4 ">
             <a
               data-fancybox="gallery"
@@ -150,7 +152,7 @@ const Gallery = () => {
               />
             </a>
           </div>
-        </div>
+        </div> */}
       </Fancybox>
       <button
         type="button"

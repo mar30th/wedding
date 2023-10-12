@@ -25,6 +25,12 @@ const Portfolio = () => {
         <Bride />
         <Groom />
       </div>
+      <div className="py-10">
+        <img
+          src="https://templates.microweber.com/wedding/userfiles/templates/wedding/assets/img/decoration-3.svg"
+          style={{ maxHeight: "40px", maxWidth: "500px", margin: "auto" }}
+        ></img>
+      </div>
     </div>
   );
 };

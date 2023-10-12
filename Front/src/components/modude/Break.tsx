@@ -6,7 +6,6 @@ const Break = () => {
         <div className='relative align-top'>
             <section className='flex bg-main-banner min-h-[500px] static bg-fixed bg-cover bg-center bg-no-repeat'>
                 <div>
-                    ok
                 </div>
             </section>
         </div>

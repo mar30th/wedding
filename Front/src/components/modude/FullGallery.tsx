@@ -44,8 +44,7 @@ const FullGallery = () => {
             Back To Wedding
           </button>
         </div>
-      </div>{" "}
-      {/* <div className="container w-3/4 my-5 mx-auto grid grid-cols-2 md:grid-cols-4 gap-4"> */}
+      </div>
         <div className="container w-3/4 my-5 mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
           {galleryList?.map((img: { link: string; }, index: number) => (
             <div key={index} className="box w-full break-inside-avoid">
@@ -56,23 +55,6 @@ const FullGallery = () => {
             </div>
           ))}
         </div>
-
-        {/* <div className="box w-full break-inside-avoid">
-          <img src={p2} className="max-w-full rounded-2xl" />
-        </div>
-        <div className="box w-full break-inside-avoid">
-          <img src={p3} className="max-w-full rounded-2xl" />
-        </div>
-        <div className="box w-full break-inside-avoid">
-          <img src={p4} className="max-w-full rounded-2xl" />
-        </div>
-        <div className="box w-full break-inside-avoid">
-          <img src={p5} className="max-w-full rounded-2xl" />
-        </div>
-        <div className="box w-full break-inside-avoid">
-          <img src={p6} className="max-w-full rounded-2xl" />
-        </div> */}
-      {/* </div> */}
     </div>
   );
 };

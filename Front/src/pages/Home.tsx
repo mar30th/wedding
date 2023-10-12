@@ -5,6 +5,7 @@ import Gallery from "../components/modude/Gallery";
 import Intro from "../components/modude/Intro";
 import Portfolio from "../components/modude/Portfolio";
 import Break from "../components/modude/Break";
+import Fading from "../components/modude/Fading";
 
 const Home = () => {
   return (
@@ -16,9 +17,9 @@ const Home = () => {
           <Gallery />
         </div>
       </div>
-      <Portfolio />
-
       <Break />
+      <Portfolio />
+      {/* <Fading/> */}
     </div>
   );
 };
