@@ -7,9 +7,8 @@ const Bride = () => {
       <div className="md:col-span-1">
         <div className="">
           <img
-            src={p1}
+            src="http://localhost:8080/public/avatar_img/bride.webp"
             alt=""
-            style={{ height: "444px", width: "566px" }}
             className="transform scale-100 hover:opacity-70 transition-transform duration-300 ease-in-out rounded-t md:round-0"
           />
         </div>

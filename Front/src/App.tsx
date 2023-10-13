@@ -5,7 +5,10 @@ import { BrowserRouter } from "react-router-dom";
 import Header from "./components/Header";
 import Rounter from "./router";
 
+
 function App() {
+  console.log(process.env.PUBLIC_URL);
+  
   return (
     <div className="App">
       <BrowserRouter>

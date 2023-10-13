@@ -5,12 +5,12 @@ import { Carousel } from "@fancyapps/ui";
 import Fancybox from "../Fancybox";
 
 const ShowCase = () => {
-  const mapRange = (
-    inputLower: number,
-    inputUpper: number,
-    outputLower: number,
-    outputUpper: number,
-    value: number
+  const mapShowCaseRange = (
+    inputLower: any,
+    inputUpper: any,
+    outputLower: any,
+    outputUpper: any,
+    value: any
   ) => {
     const INPUT_RANGE = inputUpper - inputLower;
     const OUTPUT_RANGE = outputUpper - outputLower;
@@ -31,7 +31,7 @@ const ShowCase = () => {
           }) => {
             carousel.slides.map((slide) => {
               const progress = carousel.getProgress(slide.index);
-              const scale = mapRange(0, 1, 1, 1.2, 1 - Math.abs(progress));
+              const scale = mapShowCaseRange(0, 1, 1, 1.2, 1 - Math.abs(progress));
 
               slide.el.style.setProperty("--f-scale", scale);
               slide.el.style.setProperty(
@@ -52,7 +52,7 @@ const ShowCase = () => {
 
   return (
     <Fancybox>
-      <div id="app" className="p-4">
+      <div className="p-4">
         <div className="f-carousel" id="showCaseCarousel">
           <div className="f-carousel__slide">
             <a data-fancybox="gallery" href="https://lipsum.app/id/31/640x640">
@@ -105,124 +105,3 @@ const ShowCase = () => {
 };
 
 export default ShowCase;
-
-{
-  /* <div className="py-5 grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="grid gap-4 ">
-            <a
-              data-fancybox="gallery"
-              href="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
-            >
-              <img
-                className="h-auto max-w-full rounded-lg hover:opacity-75"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
-              />
-            </a>
-            <a
-              data-fancybox="gallery"
-              href="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg"
-            >
-              <img
-                className="h-auto max-w-full rounded-lg hover:opacity-75"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg"
-              />
-            </a>
-            <a
-              data-fancybox="gallery"
-              href="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg"
-            >
-              <img
-                className="h-auto max-w-full rounded-lg hover:opacity-75"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg"
-              />
-            </a>
-          </div>
-          <div className="grid gap-4">
-            <a
-              data-fancybox="gallery"
-              href="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg"
-            >
-              <img
-                className="h-auto max-w-full rounded-lg hover:opacity-75"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg"
-              />
-            </a>
-            <a
-              data-fancybox="gallery"
-              href="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg"
-            >
-              <img
-                className="h-auto max-w-full rounded-lg hover:opacity-75"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg"
-              />
-            </a>
-            <a
-              data-fancybox="gallery"
-              href="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg"
-            >
-              <img
-                className="h-auto max-w-full rounded-lg hover:opacity-75"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg"
-              />
-            </a>
-          </div>
-          <div className="grid gap-4">
-            <a
-              data-fancybox="gallery"
-              href="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg"
-            >
-              <img
-                className="h-auto max-w-full rounded-lg hover:opacity-75"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg"
-              />
-            </a>
-            <a
-              data-fancybox="gallery"
-              href="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg"
-            >
-              <img
-                className="h-auto max-w-full rounded-lg hover:opacity-75"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg"
-              />
-            </a>
-            <a
-              data-fancybox="gallery"
-              href="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg"
-            >
-              <img
-                className="h-auto max-w-full rounded-lg hover:opacity-75"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg"
-              />
-            </a>
-          </div>
-          <div className="grid gap-4">
-            <a
-              data-fancybox="gallery"
-              href="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg"
-            >
-              <img
-                className="h-auto max-w-full rounded-lg hover:opacity-75"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg"
-              />
-            </a>
-            <a
-              data-fancybox="gallery"
-              href="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg"
-            >
-              <img
-                className="h-auto max-w-full rounded-lg hover:opacity-75"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg"
-              />
-            </a>
-            <a
-              data-fancybox="gallery"
-              href="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
-            >
-              <img
-                className="h-auto max-w-full rounded-lg hover:opacity-75"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
-              />
-            </a>
-          </div>
-        </div> */
-}

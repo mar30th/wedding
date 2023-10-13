@@ -1,6 +1,6 @@
 import React from "react";
 import P1 from "../../assets/img/banner.jpg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 
 const Carousel = () => {
   const navigate = useNavigate();

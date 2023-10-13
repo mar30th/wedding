@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import { FetchGallery } from "../../store/WeddingManage/thunkActions";
+import Fancybox from "../Fancybox";
 
 const FullGallery = () => {
   const { galleryList } = useSelector(
@@ -45,16 +46,20 @@ const FullGallery = () => {
           </button>
         </div>
       </div>
+      <Fancybox>
         <div className="container w-3/4 my-5 mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-          {galleryList?.map((img: { link: string; }, index: number) => (
+          {galleryList?.map((img: { link: string }, index: number) => (
             <div key={index} className="box w-full break-inside-avoid">
-              <img
-                src={`http://localhost:8080` + img.link}
-                className="max-w-full rounded-2xl"
-              />
+              <a data-fancybox="gallery" href={`http://localhost:8080` + img.link}>
+                <img
+                  src={`http://localhost:8080` + img.link}
+                  className="max-w-full rounded-2xl hover:opacity-80"
+                />
+              </a>
             </div>
           ))}
         </div>
+      </Fancybox>
     </div>
   );
 };
