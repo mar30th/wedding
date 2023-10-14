@@ -1,17 +1,54 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/img/logo3.png"
-
+import logo from "../assets/img/logo3.png";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../store";
+import { weddingActions } from "../store/WeddingManage/slice";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
-  const navigate = useNavigate()
+  const { language } = useSelector((state: RootState) => state.weddingManage);
+  const { t, i18n } = useTranslation();
+  console.log(i18n.language);
+  
+  // const [currentLanguage, setCurrentLanguage] = useState(language);
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
+
+  // useEffect(() => {
+  //   const handleLanguageChange = () => {
+  //     const newLanguage = language;
+  //     if (newLanguage === "EN") {
+  //       return dispatch(weddingActions.changeLanguage("VN"));
+  //     } else if (newLanguage === "VN") {
+  //       return dispatch(weddingActions.changeLanguage("EN"));
+  //     }
+  //   };
+  // });
+
+  const handleLanguage = () => {
+    const currentLanguage = i18n.language;
+    if(currentLanguage === "en") {
+      return i18n.changeLanguage("vn")
+    } else if(currentLanguage === "vn") {
+      return i18n.changeLanguage("en")
+    }
+  }
+
+  // console.log(currentLanguage);
+
   return (
     <nav className="bg-white md:w-4/5 mx-auto">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
-
-          <span className="self-center text-2xl font-semibold whitespace-nowrap cursor-pointer" onClick={() => {navigate('/')}}>
-            <img src={logo} className="h-[100px] mr-3" alt="" />
-          </span>
+        <span
+          className="self-center text-2xl font-semibold whitespace-nowrap cursor-pointer"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          <img src={logo} className="h-[100px] mr-3" alt="" />
+        </span>
         <button
           data-collapse-toggle="navbar-default"
           type="button"
@@ -79,6 +116,14 @@ const Header = () => {
                 Contact
               </a>
             </li>
+            <label
+              className="relative inline-flex items-center cursor-pointer"
+            >
+              <input type="checkbox" className="sr-only peer"  
+              onClick={() => {handleLanguage()
+              }}/>
+              <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-theme" />
+            </label>
           </ul>
         </div>
       </div>

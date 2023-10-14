@@ -4,19 +4,26 @@ import { FetchBanner, FetchGallery } from "./thunkActions";
 
 
 type weddingInitialState = {
+    language?: string;
     banner?: GetFetchBanner;
     galleryList?: GetFetchGallery;
 }
 
 const initialState: weddingInitialState = {
-    
+    language: "EN"
 }
 
 
 export const { reducer: weddingReducer, actions: weddingActions} = createSlice({
     name: "wedding",
     initialState,
-    reducers: {},
+    reducers: {
+        changeLanguage: (state, action) => {
+            console.log(action.payload);
+            
+            state.language = action.payload
+        }
+    },
     extraReducers(builder) {
         builder
         .addCase(FetchGallery.fulfilled, (state, action) => {

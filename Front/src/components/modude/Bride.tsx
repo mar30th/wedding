@@ -1,22 +1,29 @@
 import React from "react";
 import p1 from "../../assets/img/1.jpg";
+import { useTranslation } from "react-i18next";
+
 
 const Bride = () => {
+
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+  const { t, i18n } = useTranslation();
+
+
   return (
     <div className="grid px-4 md:grid-cols-2 md:px-0 md:mb-0 mb-2">
       <div className="md:col-span-1">
         <div className="">
           <img
-            src="http://localhost:8080/public/avatar_img/bride.webp"
-            alt=""
+            src={baseUrl + "/public/avatar_img/bride.webp"}
+            alt="Bride picture"
             className="transform scale-100 hover:opacity-70 transition-transform duration-300 ease-in-out rounded-t md:round-0"
           />
         </div>
       </div>
       <div className="flex items-center justify-center text-left p-4 align-self-center allow-drop border border-t-0 border-theme md:border-0">
         <div className="child text-center">
-          <p>Saturday | 18-11-2023 | 11:00 AM.</p>
-          <h3 className="text-4xl py-5 text-center">Bride's Party</h3>
+          <p>{t("bridePartyTime")}</p>
+          <h3 className="text-4xl py-5 text-center">{t("brideParty")}</h3>
           {/* Modal toggle */}
           <button
             data-modal-target="brideModal"
@@ -24,7 +31,7 @@ const Bride = () => {
             className="my-4 bg-theme text-white font-semibold py-1 px-2 focus:outline-none rounded-xl border hover:bg-white hover:text-black hover:border-theme hover:text-theme"
             type="button"
           >
-            Where to go
+            {t("mapButton")}
           </button>
           <div className="text-left">
             {/* Main modal */}

@@ -8,6 +8,9 @@ import { useNavigate } from "react-router-dom";
 import { FetchGallery } from "../../store/WeddingManage/thunkActions";
 
 const Fading = () => {
+
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+ 
   const { galleryList } = useSelector(
     (state: RootState) => state.weddingManage
   );
@@ -80,7 +83,7 @@ const Fading = () => {
               <button data-carousel-prev className="px-3 mr-1 h-10 bg-theme text-white font-semibold border hover:bg-white hover:border-theme hover:text-theme rounded-md leading-none">
                 ←
                 </button>
-              <button data-carousel-next className="px-3 mr-1 h-10 bg-theme text-white font-semibold border hover:bg-white hover:border-theme hover:text-theme rounded-md leading-none">
+              <button data-carousel-next className="px-3 h-10 bg-theme text-white font-semibold border hover:bg-white hover:border-theme hover:text-theme rounded-md leading-none">
                 →
               </button>
             </p>
@@ -104,13 +107,13 @@ const Fading = () => {
                       <div key={index} className="f-carousel__slide">
                         <a
                           data-fancybox="gallery"
-                          href={`http://localhost:8080` + img.link}
+                          href={baseUrl + img.link}
                         >
                           <img
                             className="mb-4 w-full rounded-lg hover:opacity-80"
                             width={300}
                             height={400}
-                            src={`http://localhost:8080` + img.link}
+                            src={baseUrl + img.link}
                           />
                         </a>
                       </div>
