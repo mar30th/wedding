@@ -8,7 +8,6 @@ const Bride = () => {
   const baseUrl = process.env.REACT_APP_BASE_URL;
   const { t, i18n } = useTranslation();
 
-
   return (
     <div className="grid px-4 md:grid-cols-2 md:px-0 md:mb-0 mb-2">
       <div className="md:col-span-1">
@@ -47,13 +46,12 @@ const Bride = () => {
                   {/* Modal header */}
                   <div className="flex items-start justify-between p-4 border-b rounded-t">
                     <h3 className="text-xl font-semibold text-gray-900">
-                      Pleiku Palace
+                      {t("brideResName")}
                       <br />
                       <span className="opacity-50 text-sm">
-                        Vien Ngoc Xanh 1 Lobby
+                        {t("brideResLobby")}
                         <br />
-                        03 Nguyen Tat Thanh Street, Ward Hoa Lu, Pleiku City,
-                        Gia Lai
+                        {t("brideResAddress")}
                       </span>
                     </h3>
                     <button

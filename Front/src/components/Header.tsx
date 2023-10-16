@@ -7,23 +7,9 @@ import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
-  console.log(i18n.language);
   
-  // const [currentLanguage, setCurrentLanguage] = useState(language);
-
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
-
-  // useEffect(() => {
-  //   const handleLanguageChange = () => {
-  //     const newLanguage = language;
-  //     if (newLanguage === "EN") {
-  //       return dispatch(weddingActions.changeLanguage("VN"));
-  //     } else if (newLanguage === "VN") {
-  //       return dispatch(weddingActions.changeLanguage("EN"));
-  //     }
-  //   };
-  // });
 
   const handleLanguage = () => {
     const currentLanguage = i18n.language;
@@ -33,8 +19,6 @@ const Header = () => {
       return i18n.changeLanguage("en")
     }
   }
-
-  // console.log(currentLanguage);
 
   return (
     <nav className="bg-white md:w-4/5 mx-auto">

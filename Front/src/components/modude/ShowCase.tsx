@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 import "@fancyapps/ui/dist/carousel/carousel.css";
 import "./css/showcase.css";
 import { Carousel } from "@fancyapps/ui";
-import Fancybox from "../Fancybox";
+import Fancybox from "../utils/Fancybox";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import { FetchShowcase } from "../../store/WeddingManage/thunkActions";
+import { mapRange } from "../utils/mapRange";
 
 const ShowCase = () => {
   const baseUrl = process.env.REACT_APP_BASE_URL;
@@ -20,21 +21,6 @@ const ShowCase = () => {
     dispatch(FetchShowcase());
   }, [dispatch]);
 
-  console.log(showcaseList);
-
-  const mapShowCaseRange = (
-    inputLower: any,
-    inputUpper: any,
-    outputLower: any,
-    outputUpper: any,
-    value: any
-  ) => {
-    const INPUT_RANGE = inputUpper - inputLower;
-    const OUTPUT_RANGE = outputUpper - outputLower;
-    return (
-      outputLower + (((value - inputLower) / INPUT_RANGE) * OUTPUT_RANGE || 0)
-    );
-  };
   useEffect(() => {
     const showCaseCarousel = new Carousel(
       document.getElementById("showCaseCarousel"),
@@ -48,7 +34,7 @@ const ShowCase = () => {
           }) => {
             carousel.slides.map((slide) => {
               const progress = carousel.getProgress(slide.index);
-              const scale = mapShowCaseRange(
+              const scale = mapRange(
                 0,
                 1,
                 1,

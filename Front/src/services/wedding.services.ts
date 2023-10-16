@@ -1,5 +1,7 @@
 import http from "../constant/api";
 
+const baseUrl = process.env.REACT_APP_BASE_URL;
+
 export type GetFetchGallery = [{
     img_id: number;
     link: string;
@@ -16,7 +18,7 @@ export type GetFetchShowcase = [{
 }]
 
 export const weddingServices = {
-    FetchBanner: () => http.get<GetFetchBanner>(`http://localhost:8080/gallery`),
-    FetchGallery: () => http.get<GetFetchGallery>(`http://localhost:8080/gallery/image`),
-    FetchShowcase: () => http.get<GetFetchShowcase>(`http://localhost:8080/gallery/showcase`),
+    FetchBanner: () => http.get<GetFetchBanner>(`${baseUrl + "/gallery"}`),
+    FetchGallery: () => http.get<GetFetchGallery>(`${baseUrl + "/gallery/image"}`),
+    FetchShowcase: () => http.get<GetFetchShowcase>(`${baseUrl + "/gallery/showcase"}`),
 };

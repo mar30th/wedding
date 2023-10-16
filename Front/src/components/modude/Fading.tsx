@@ -1,40 +1,25 @@
 import React, { useEffect } from "react";
-import Fancybox from "../Fancybox";
+import Fancybox from "../utils/Fancybox";
 import { Carousel } from "@fancyapps/ui";
 import "./css/fading.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import { FetchGallery } from "../../store/WeddingManage/thunkActions";
+import { mapRange } from "../utils/mapRange";
 
 const Fading = () => {
-
   const baseUrl = process.env.REACT_APP_BASE_URL;
- 
+
   const { galleryList } = useSelector(
     (state: RootState) => state.weddingManage
   );
-  
+
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     dispatch(FetchGallery());
   }, [dispatch]);
 
-
-  const mapFadingRange = (
-    inputLower: any,
-    inputUpper: any,
-    outputLower: any,
-    outputUpper: any,
-    value: any
-  ) => {
-    const INPUT_RANGE = inputUpper - inputLower;
-    const OUTPUT_RANGE = outputUpper - outputLower;
-    return (
-      outputLower + (((value - inputLower) / INPUT_RANGE) * OUTPUT_RANGE || 0)
-    );
-  };
-  
   useEffect(() => {
     const fadingCarousel = new Carousel(
       document.getElementById("fadingCarousel"),
@@ -49,8 +34,7 @@ const Fading = () => {
               let progress =
                 (carousel.panzoom.current.e * -1 - slide.pos) / slide.dim;
               progress = progress > 0 ? 1 - Math.min(1, progress) : 1;
-              const scale = mapFadingRange(0, 1, 0.8, 1, progress);
-
+              const scale = mapRange(0, 1, 0.8, 1, progress);
               slide.el.style.setProperty("--f-scale", `${scale}`);
               slide.el.style.setProperty("--f-progress", `${progress}`);
             });
@@ -82,10 +66,16 @@ const Fading = () => {
               together. Rejoice us!
             </p>
             <p className="font-serif text-3xl">
-              <button data-carousel-prev className="px-3 mr-1 h-10 bg-theme text-white font-semibold border hover:bg-white hover:border-theme hover:text-theme rounded-md leading-none">
+              <button
+                data-carousel-prev
+                className="px-3 mr-1 h-10 bg-theme text-white font-semibold border hover:bg-white hover:border-theme hover:text-theme rounded-md leading-none"
+              >
                 ←
-                </button>
-              <button data-carousel-next className="px-3 h-10 bg-theme text-white font-semibold border hover:bg-white hover:border-theme hover:text-theme rounded-md leading-none">
+              </button>
+              <button
+                data-carousel-next
+                className="px-3 h-10 bg-theme text-white font-semibold border hover:bg-white hover:border-theme hover:text-theme rounded-md leading-none"
+              >
                 →
               </button>
             </p>
@@ -107,10 +97,7 @@ const Fading = () => {
                     ?.slice(1, 6)
                     .map((img: { link: string }, index: number) => (
                       <div key={index} className="f-carousel__slide">
-                        <a
-                          data-fancybox="gallery"
-                          href={baseUrl + img.link}
-                        >
+                        <a data-fancybox="gallery" href={baseUrl + img.link}>
                           <img
                             className="mb-4 w-full rounded-lg hover:opacity-80"
                             width={300}

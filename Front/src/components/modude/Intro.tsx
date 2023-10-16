@@ -1,15 +1,17 @@
 import React from "react";
+import Decoration1 from "../decoration/Decoration1";
 
 const Intro = () => {
   return (
     <div className="grid md:grid-cols-12  p-1">
       <div className="md:col-span-8 py-5 md:col-start-3">
-        <div className="">
+        {/* <div className="">
           <img
             src="https://templates.microweber.com/wedding/userfiles/templates/wedding/assets/img/decoration-1.svg"
             style={{ maxHeight: "40px", maxWidth: "500px", margin: "auto" }}
           ></img>
-        </div>
+        </div> */}
+        <Decoration1 />
         <div className="col-span-12 text-center">
           <h1 className="text-2xl md:text-5xl font-semibold my-4 md:my-12">We Will Get Married</h1>
           <p className="text-justify font-semibold">

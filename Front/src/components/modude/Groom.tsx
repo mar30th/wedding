@@ -50,12 +50,12 @@ const Groom = () => {
                   {/* Modal header */}
                   <div className="flex items-start justify-between p-4 border-b rounded-t">
                     <h3 className="text-xl font-semibold text-gray-900">
-                      Western Palace Wedding & Convention
+                      {t("groomResName")}
                       <br />
                       <span className="opacity-50 text-sm">
-                        Spring Palace Lobby - 4th Floor <br />
-                        443 - 445 Le Hong Phong Street, Ward 2, District 10, Ho
-                        Chi Minh City, Vietnam
+                        {t("groomResLobby")}
+                        <br />
+                        {t("groomResAddress")}
                       </span>
                     </h3>
                     <button

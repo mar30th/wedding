@@ -5,19 +5,21 @@ import Groom from "./Groom";
 import Bride from "./Bride";
 import ShowCase from "./ShowCase";
 import { useTranslation } from "react-i18next";
-
+import Decoration1 from "../decoration/Decoration1";
+import Decoration3 from "../decoration/Decoration3";
 
 const Portfolio = () => {
   const { t, i18n } = useTranslation();
 
   return (
     <div className="md:w-4/5 mx-auto py-10">
-      <div className="">
+      {/* <div className="">
         <img
           src="https://templates.microweber.com/wedding/userfiles/templates/wedding/assets/img/decoration-1.svg"
           style={{ maxHeight: "40px", maxWidth: "500px", margin: "auto" }}
         ></img>
-      </div>
+      </div> */}
+      <Decoration1 />
       <div className="mx-auto text-2xl md:text-5xl text-center font-semibold ">
         <div className="grid md:grid-cols-12">
           <div className="col-span-12">
@@ -29,12 +31,13 @@ const Portfolio = () => {
         <Bride />
         <Groom />
       </div>
-      <div className="py-10">
+      {/* <div className="py-10">
         <img
           src="https://templates.microweber.com/wedding/userfiles/templates/wedding/assets/img/decoration-3.svg"
           style={{ maxHeight: "40px", maxWidth: "500px", margin: "auto" }}
         ></img>
-      </div>
+      </div> */}
+      <Decoration3 />
     </div>
   );
 };

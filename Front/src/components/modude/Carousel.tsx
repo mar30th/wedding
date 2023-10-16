@@ -7,12 +7,13 @@ const Carousel = () => {
   return (
     <div className="mx-auto">
       <div className="py-5">
-        <div className="">
+        {/* <div className="">
           <img
             src="https://templates.microweber.com/wedding/userfiles/templates/wedding/assets/img/decoration-2.svg"
             style={{ maxHeight: "40px", maxWidth: "500px", margin: "auto" }}
           />
-        </div>
+        </div> */}
+        
         <div>
           {/* <h1 className="text-2xl md:text-5xl md:my-5 my-2 font-semibold">Our Best Moments</h1> */}
           <h1 className="text-2xl md:text-5xl font-semibold my-4 md:my-12">We're getting married!</h1>
