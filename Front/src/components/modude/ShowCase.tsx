@@ -3,8 +3,25 @@ import "@fancyapps/ui/dist/carousel/carousel.css";
 import "./css/showcase.css";
 import { Carousel } from "@fancyapps/ui";
 import Fancybox from "../Fancybox";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../store";
+import { FetchShowcase } from "../../store/WeddingManage/thunkActions";
 
 const ShowCase = () => {
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+
+  const { showcaseList } = useSelector(
+    (state: RootState) => state.weddingManage
+  );
+
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    dispatch(FetchShowcase());
+  }, [dispatch]);
+
+  console.log(showcaseList);
+
   const mapShowCaseRange = (
     inputLower: any,
     inputUpper: any,
@@ -31,7 +48,13 @@ const ShowCase = () => {
           }) => {
             carousel.slides.map((slide) => {
               const progress = carousel.getProgress(slide.index);
-              const scale = mapShowCaseRange(0, 1, 1, 1.2, 1 - Math.abs(progress));
+              const scale = mapShowCaseRange(
+                0,
+                1,
+                1,
+                1.2,
+                1 - Math.abs(progress)
+              );
 
               slide.el.style.setProperty("--f-scale", scale);
               slide.el.style.setProperty(
@@ -57,7 +80,7 @@ const ShowCase = () => {
           <div className="f-carousel__slide">
             <a data-fancybox="gallery" href="https://lipsum.app/id/31/640x640">
               <img
-              className="hover:opacity-80"
+                className="hover:opacity-80"
                 width="640"
                 height="640"
                 alt=""
@@ -68,7 +91,7 @@ const ShowCase = () => {
           <div className="f-carousel__slide">
             <a data-fancybox="gallery" href="https://lipsum.app/id/35/640x640">
               <img
-              className="hover:opacity-80"
+                className="hover:opacity-80"
                 width="640"
                 height="640"
                 alt=""
@@ -79,7 +102,7 @@ const ShowCase = () => {
           <div className="f-carousel__slide">
             <a data-fancybox="gallery" href="https://lipsum.app/id/35/640x640">
               <img
-              className="hover:opacity-80"
+                className="hover:opacity-80"
                 width="640"
                 height="640"
                 alt=""
@@ -90,7 +113,7 @@ const ShowCase = () => {
           <div className="f-carousel__slide">
             <a data-fancybox="gallery" href="https://lipsum.app/id/35/640x640">
               <img
-              className="hover:opacity-80"
+                className="hover:opacity-80"
                 width="640"
                 height="640"
                 alt=""
@@ -98,6 +121,22 @@ const ShowCase = () => {
               />
             </a>
           </div>
+          {/* {showcaseList?.map((img: { link: string }, index: number) => (
+            <div className="f-carousel__slide">
+              <a
+                data-fancybox="gallery"
+                href={baseUrl + img.link}
+              >
+                <img
+                  className="hover:opacity-80"
+                  width="640"
+                  height="640"
+                  alt=""
+                  data-lazy-src={baseUrl + img.link}
+                />
+              </a>
+            </div>
+          ))} */}
         </div>
       </div>
     </Fancybox>

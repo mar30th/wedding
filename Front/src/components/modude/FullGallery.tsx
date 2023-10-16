@@ -1,10 +1,4 @@
 import React, { useEffect } from "react";
-import p1 from "../../assets/img/1.jpg";
-import p2 from "../../assets/img/2.jpg";
-import p3 from "../../assets/img/3.jpg";
-import p4 from "../../assets/img/4.jpg";
-import p5 from "../../assets/img/5.jpg";
-import p6 from "../../assets/img/banner.jpg";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
@@ -23,7 +17,8 @@ const FullGallery = () => {
 
   useEffect(() => {
     dispatch(FetchGallery());
-  }, [dispatch]);
+  }, [dispatch, galleryList]);
+
 
   return (
     <div>
@@ -31,7 +26,7 @@ const FullGallery = () => {
         <div className="mx-auto py-5">
           <div className="">
             <img
-              src="https://templates.microweber.com/wedding/userfiles/templates/wedding/assets/img/decoration-3.svg"
+              src="https://templates.microweber.com/wedding/userfiles/templates/wedding/assets/img/decoration-3.svg" alt="decoration-3"
               style={{ maxHeight: "40px", maxWidth: "500px", margin: "auto" }}
             />
           </div>
@@ -52,7 +47,7 @@ const FullGallery = () => {
             <div key={index} className="box w-full break-inside-avoid">
               <a data-fancybox="gallery" href={`http://localhost:8080` + img.link}>
                 <img
-                  src={`http://localhost:8080` + img.link}
+                  src={`http://localhost:8080` + img.link} alt={`img`}
                   className="max-w-full rounded-2xl hover:opacity-80"
                 />
               </a>

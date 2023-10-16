@@ -4,7 +4,6 @@ import { Carousel } from "@fancyapps/ui";
 import "./css/fading.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
-import { useNavigate } from "react-router-dom";
 import { FetchGallery } from "../../store/WeddingManage/thunkActions";
 
 const Fading = () => {
@@ -14,10 +13,13 @@ const Fading = () => {
   const { galleryList } = useSelector(
     (state: RootState) => state.weddingManage
   );
+  
   const dispatch = useDispatch<AppDispatch>();
+
   useEffect(() => {
     dispatch(FetchGallery());
   }, [dispatch]);
+
 
   const mapFadingRange = (
     inputLower: any,

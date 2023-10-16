@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/img/logo3.png";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../store";
-import { weddingActions } from "../store/WeddingManage/slice";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../store";
 import { useTranslation } from "react-i18next";
 
 const Header = () => {
-  const { language } = useSelector((state: RootState) => state.weddingManage);
   const { t, i18n } = useTranslation();
   console.log(i18n.language);
   

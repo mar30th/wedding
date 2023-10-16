@@ -1,27 +1,17 @@
 import React, { useEffect } from "react";
-import bn from "../../assets/img/banner.jpg";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../../store";
-import { weddingActions } from "../../store/WeddingManage/slice";
 import { useTranslation } from "react-i18next";
 
 
 const Banner = () => {
   const { t, i18n } = useTranslation();
-
   const baseUrl = process.env.REACT_APP_BASE_URL;
-  const { language } = useSelector((state: RootState) => state.weddingManage);
-  const dispatch = useDispatch<AppDispatch>();
-  useEffect(() => {
-    
-  })
 
   return (
     <div className=" relative">
       {/* <section className="bg-[url('http://localhost:8080/public/banner_img/DSC_7764.webp')] min-h-[500px] static bg-fixed bg-cover  bg-no-repeat opacity-50"></section> */}
       <section
-        className={`bg-[url(${
-          baseUrl + "/public/banner_img/DSC_7764.webp"
+        className={`bg-[url('${
+          baseUrl + "/public/banner_img/DSC_7764.webp'"
         })] min-h-[500px] static bg-fixed bg-cover bg-no-repeat opacity-50`}
       ></section>
 

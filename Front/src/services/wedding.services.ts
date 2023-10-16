@@ -10,7 +10,13 @@ export type GetFetchBanner = [{
     link: string;
 }]
 
+export type GetFetchShowcase = [{
+    showcase_id: number;
+    link: string;
+}]
+
 export const weddingServices = {
     FetchBanner: () => http.get<GetFetchBanner>(`http://localhost:8080/gallery`),
-    FetchGallery: () => http.get<GetFetchGallery>(`http://localhost:8080/gallery`),
+    FetchGallery: () => http.get<GetFetchGallery>(`http://localhost:8080/gallery/image`),
+    FetchShowcase: () => http.get<GetFetchShowcase>(`http://localhost:8080/gallery/showcase`),
 };

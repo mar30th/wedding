@@ -1,36 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { GetFetchBanner, GetFetchGallery } from "../../services/wedding.services";
-import { FetchBanner, FetchGallery } from "./thunkActions";
+import { GetFetchBanner, GetFetchGallery, GetFetchShowcase } from "../../services/wedding.services";
+import { FetchGallery, FetchShowcase } from "./thunkActions";
 
 
 type weddingInitialState = {
-    language?: string;
     banner?: GetFetchBanner;
     galleryList?: GetFetchGallery;
+    showcaseList?: GetFetchShowcase;
 }
 
 const initialState: weddingInitialState = {
-    language: "EN"
 }
 
 
 export const { reducer: weddingReducer, actions: weddingActions} = createSlice({
     name: "wedding",
     initialState,
-    reducers: {
-        changeLanguage: (state, action) => {
-            console.log(action.payload);
-            
-            state.language = action.payload
-        }
-    },
+    reducers: {},
     extraReducers(builder) {
         builder
         .addCase(FetchGallery.fulfilled, (state, action) => {
             state.galleryList = action.payload
         })
-        // .addCase(FetchBanner.fulfilled, (state, action) => {
-        //     state.banner = action.payload
-        // })
+        .addCase(FetchShowcase.fulfilled, (state, action) => {
+            state.showcaseList = action.payload
+        })
     }
 })

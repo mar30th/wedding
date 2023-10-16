@@ -24,3 +24,15 @@ export const FetchGallery = createAsyncThunk(
     }
   }
 );
+
+export const FetchShowcase = createAsyncThunk(
+  "weddingmanage/fetchshowcase",
+  async (_, { rejectWithValue }) => {
+    try {
+      const res = await weddingServices.FetchShowcase();
+      return res.data
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+)
