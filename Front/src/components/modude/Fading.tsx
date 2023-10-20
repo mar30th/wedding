@@ -1,29 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Fancybox from "../utils/Fancybox";
 import { Carousel } from "@fancyapps/ui";
 import "./css/fading.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
-import { FetchGallery } from "../../store/WeddingManage/thunkActions";
+import { FetchFading } from "../../store/WeddingManage/thunkActions";
 import { mapRange } from "../utils/mapRange";
 
 const Fading = () => {
   const baseUrl = process.env.REACT_APP_BASE_URL;
 
-  const { galleryList } = useSelector(
-    (state: RootState) => state.weddingManage
-  );
+  const { fadingList } = useSelector((state: RootState) => state.weddingManage);
+  const fadingCarouselRef = useRef(null);
 
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    dispatch(FetchGallery());
+    dispatch(FetchFading());
   }, [dispatch]);
 
   useEffect(() => {
-    const fadingCarousel = new Carousel(
-      document.getElementById("fadingCarousel"),
-      {
+    if (fadingList && fadingList.length > 0 && fadingCarouselRef.current) {
+      new Carousel(fadingCarouselRef.current, {
         Dots: false,
         Navigation: false,
         infinite: false,
@@ -40,19 +38,16 @@ const Fading = () => {
             });
           },
         },
-      }
-    );
-
-    return () => {
-      // Clean up and destroy the Carousel when the component unmounts
-      fadingCarousel.destroy();
-    };
-  }, []);
+      });
+    }
+  }, [fadingList]);
+  
 
   return (
     <div>
       <div className="p-4">
         <div
+          ref={fadingCarouselRef}
           id="fadingCarousel"
           className="mb-9 f-carousel lg:grid lg:grid-cols-[360px_1fr] text-slate-700"
         >
@@ -84,7 +79,7 @@ const Fading = () => {
             <Fancybox
               options={{
                 Carousel: {
-                  // infinite: false,
+                  infinite: true,
                 },
                 Thumbs: {
                   type: "none",
@@ -93,20 +88,19 @@ const Fading = () => {
             >
               <div className="f-carousel__viewport lg:pl-[360px]">
                 <div className="f-carousel__track items-baseline">
-                  {galleryList
-                    ?.slice(1, 6)
-                    .map((img: { link: string }, index: number) => (
-                      <div key={index} className="f-carousel__slide">
-                        <a data-fancybox="gallery" href={baseUrl + img.link}>
-                          <img
-                            className="mb-4 w-full rounded-lg hover:opacity-80"
-                            width={300}
-                            height={400}
-                            src={baseUrl + img.link}
-                          />
-                        </a>
-                      </div>
-                    ))}
+                  {fadingList?.map((img: { link: string }, index: number) => (
+                    <figure key={index} className="f-carousel__slide">
+                      <a data-fancybox="gallery" href={baseUrl + img.link}>
+                        <img
+                          className="mb-4 w-full rounded-lg hover:opacity-80"
+                          width={300}
+                          height={400}
+                          src={baseUrl + img.link}
+                          alt={img.link}
+                        />
+                      </a>
+                    </figure>
+                  ))}
                 </div>
               </div>
             </Fancybox>

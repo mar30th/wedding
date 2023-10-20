@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { GetFetchBanner, GetFetchGallery, GetFetchShowcase } from "../../services/wedding.services";
-import { FetchGallery, FetchShowcase } from "./thunkActions";
+import { GetFetchBanner, GetFetchFading, GetFetchGallery, GetFetchShowcase } from "../../services/wedding.services";
+import { FetchFading, FetchGallery, FetchShowcase } from "./thunkActions";
 
 
 type weddingInitialState = {
     banner?: GetFetchBanner;
     galleryList?: GetFetchGallery;
     showcaseList?: GetFetchShowcase;
+    fadingList?: GetFetchFading;
 }
 
 const initialState: weddingInitialState = {
@@ -24,6 +25,9 @@ export const { reducer: weddingReducer, actions: weddingActions} = createSlice({
         })
         .addCase(FetchShowcase.fulfilled, (state, action) => {
             state.showcaseList = action.payload
+        })
+        .addCase(FetchFading.fulfilled, (state, action) => {
+            state.fadingList = action.payload
         })
     }
 })

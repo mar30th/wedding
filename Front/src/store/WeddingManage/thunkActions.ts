@@ -30,9 +30,21 @@ export const FetchShowcase = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const res = await weddingServices.FetchShowcase();
-      return res.data
+      return res.data;
     } catch (error) {
       return rejectWithValue(error);
     }
   }
-)
+);
+
+export const FetchFading = createAsyncThunk(
+  "weddingmanage/fetchfading",
+  async (_, { rejectWithValue }) => {
+    try {
+      const res = await weddingServices.FetchFading();
+      return res.data;
+    } catch (err) {
+      return rejectWithValue(err);
+    }
+  }
+);

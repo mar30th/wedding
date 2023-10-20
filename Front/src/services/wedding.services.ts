@@ -17,8 +17,14 @@ export type GetFetchShowcase = [{
     link: string;
 }]
 
+export type GetFetchFading = [{
+    fading_id: number;
+    link: string;
+}]
+
 export const weddingServices = {
     FetchBanner: () => http.get<GetFetchBanner>(`${baseUrl + "/gallery"}`),
     FetchGallery: () => http.get<GetFetchGallery>(`${baseUrl + "/gallery/image"}`),
     FetchShowcase: () => http.get<GetFetchShowcase>(`${baseUrl + "/gallery/showcase"}`),
+    FetchFading: () => http.get<GetFetchFading>(`${baseUrl + "/gallery/fading"}`)
 };
