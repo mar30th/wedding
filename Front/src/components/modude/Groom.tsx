@@ -31,7 +31,7 @@ const Groom = () => {
             <button
               data-modal-target="groomModal"
               data-modal-toggle="groomModal"
-              className="my-4 bg-theme text-white font-semibold py-1 px-2 focus:outline-none rounded-xl border hover:bg-white hover:text-black hover:border-theme hover:text-theme"
+              className="my-4 bg-theme text-white font-semibold py-1 px-2 focus:outline-none rounded-xl border hover:bg-white hover:border-theme hover:text-theme transition-color duration-300"
               type="button"
             >
               {t("mapButton")}
@@ -60,7 +60,7 @@ const Groom = () => {
                     </h3>
                     <button
                       type="button"
-                      className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center"
+                      className="text-gray-400 bg-transparent hover:bg-theme hover:text-white rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center transition-color duration-300"
                       data-modal-hide="groomModal"
                     >
                       <svg

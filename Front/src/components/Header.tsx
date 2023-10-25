@@ -21,7 +21,7 @@ const Header = () => {
   }
 
   return (
-    <nav className="bg-white md:w-4/5 mx-auto">
+    <nav className="bg-white md:w-4/5 mx-auto lg-only hidden md:block">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
         <span
           className="self-center text-2xl font-semibold whitespace-nowrap cursor-pointer"
@@ -55,12 +55,12 @@ const Header = () => {
             />
           </svg>
         </button>
-        <div className="hidden w-full md:block md:w-auto" id="navbar-default">
+        <div className="hidden w-full md:block md:w-auto" id="navbar-default ">
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white">
             <li>
               <a
                 href="#"
-                className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-theme md:p-0"
+                className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-theme md:p-0 transition-color duration-300"
                 aria-current="page"
               >
                 Home
@@ -69,7 +69,7 @@ const Header = () => {
             <li>
               <a
                 href="#"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-theme md:p-0"
+                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-theme md:p-0 transition-color duration-300"
               >
                 About
               </a>
@@ -77,7 +77,7 @@ const Header = () => {
             <li>
               <a
                 href="#"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-theme md:p-0"
+                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-theme md:p-0 transition-color duration-300"
               >
                 Services
               </a>
@@ -85,7 +85,7 @@ const Header = () => {
             <li>
               <a
                 href="#"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-theme md:p-0 "
+                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-theme md:p-0 transition-color duration-300"
               >
                 Pricing
               </a>
@@ -93,7 +93,7 @@ const Header = () => {
             <li>
               <a
                 href="#"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-theme md:p-0"
+                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-theme md:p-0 transition-color duration-300"
               >
                 Contact
               </a>

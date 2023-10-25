@@ -14,19 +14,19 @@ const Gallery = () => {
   return (
     <div className="mx-auto">
       <div className="py-5">
-        <ShowCase />
-        <Decoration2 />
         <div>
           {/* <h1 className="text-2xl md:text-5xl md:my-5 my-2 font-semibold">Our Best Moments</h1> */}
           <h1 className="text-2xl md:text-5xl font-semibold my-4 md:my-12">
-            We're getting married!
+            Chấn Đông & Bích Phương
           </h1>
         </div>
+        <ShowCase />
+        <Decoration2 />
       </div>
       <Fading />
       <button
         type="button"
-        className="my-4 bg-theme text-white font-semibold py-4 px-9 focus:outline-none rounded-full border hover:bg-white hover:border-theme hover:text-theme"
+        className="my-4 bg-theme text-white font-semibold py-4 px-9 focus:outline-none rounded-full border hover:bg-white hover:border-theme hover:text-theme transition-color duration-300"
         onClick={() => {
           navigate("/gallery");
         }}

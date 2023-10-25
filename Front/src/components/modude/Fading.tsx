@@ -41,7 +41,6 @@ const Fading = () => {
       });
     }
   }, [fadingList]);
-  
 
   return (
     <div>
@@ -51,29 +50,31 @@ const Fading = () => {
           id="fadingCarousel"
           className="mb-9 f-carousel lg:grid lg:grid-cols-[360px_1fr] text-slate-700"
         >
-          <div className="py-4 pr-10 z-10">
-            <h2 className="mb-6 font-serif font-semibold text-2xl">
-              Our Best Moments
-            </h2>
-            <p className="mb-6 text-xl">
-              We are grateful to God and to destiny for meeting you in this
-              life. My love, thank you for those beautiful moments we shared
-              together. Rejoice us!
-            </p>
-            <p className="font-serif text-3xl">
-              <button
-                data-carousel-prev
-                className="px-3 mr-1 h-10 bg-theme text-white font-semibold border hover:bg-white hover:border-theme hover:text-theme rounded-md leading-none"
-              >
-                ←
-              </button>
-              <button
-                data-carousel-next
-                className="px-3 h-10 bg-theme text-white font-semibold border hover:bg-white hover:border-theme hover:text-theme rounded-md leading-none"
-              >
-                →
-              </button>
-            </p>
+          <div className="py-4 lg:pr-10 z-10">
+            <div className="mx-auto">
+              <h2 className="mb-6 font-serif font-semibold text-2xl">
+                Our Best Moments
+              </h2>
+              <p className="mb-6 text-xl text-justify">
+                We are grateful to God and to destiny for meeting you in this
+                life. My love, thank you for those beautiful moments we shared
+                together. Rejoice us!
+              </p>
+              <p className="font-serif text-3xl">
+                <button
+                  data-carousel-prev
+                  className="px-3 mr-1 h-10 bg-theme text-white font-semibold border hover:bg-white hover:border-theme hover:text-theme rounded-md leading-none transition-color duration-300"
+                >
+                  ←
+                </button>
+                <button
+                  data-carousel-next
+                  className="px-3 h-10 bg-theme text-white font-semibold border hover:bg-white hover:border-theme hover:text-theme rounded-md leading-none transition-color duration-300"
+                >
+                  →
+                </button>
+              </p>
+            </div>
           </div>
           <div className="lg:ml-[-360px]">
             <Fancybox
@@ -92,7 +93,7 @@ const Fading = () => {
                     <figure key={index} className="f-carousel__slide">
                       <a data-fancybox="gallery" href={baseUrl + img.link}>
                         <img
-                          className="mb-4 w-full rounded-lg hover:opacity-80"
+                          className="mb-4 w-full rounded-lg hover:opacity-80 transition-color duration-300"
                           width={300}
                           height={400}
                           src={baseUrl + img.link}

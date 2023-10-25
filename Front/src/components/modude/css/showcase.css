@@ -36,3 +36,27 @@
     background: #fff;
   }
   
+  @media (max-width: 767px) {
+    #showCaseCarousel {
+      --f-carousel-slide-width: 70%; /* Hiển thị 1 slide trên màn hình điện thoại */
+      --f-carousel-spacing: 0;
+
+      --f-button-next-pos: 0;
+      --f-button-prev-pos: 0;
+
+      --f-button-width: 0;
+      --f-button-height: 0;
+      --f-button-border-radius: 0;
+
+      --f-button-svg-width: 0;
+      --f-button-svg-height: 0;
+      --f-button-svg-stroke-width: 0;
+    }
+
+    #showCaseCarousel img {
+      border-radius: 5%;
+      transform: scale(var(--f-scale, 0)) translateX(var(--f-translateX, 0));
+      background: #fff;
+    }
+
+  }
