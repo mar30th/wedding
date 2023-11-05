@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const BackToTop = () => {
   const [showBtn, setShowBtn] = useState(false);
+  const {pathname} = useLocation();
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -24,6 +26,12 @@ const BackToTop = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    scrollToTop()
+  }, [pathname])
+  
+
   return (
     <div className={showBtn ? "block" : "hidden"}>
       <button

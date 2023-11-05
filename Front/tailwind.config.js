@@ -22,6 +22,9 @@ module.exports = {
       },
       backgroundImage: {
         "main-banner": `url('${baseUrl}/public/banner_img/DSC_7764.webp')`,
+        "main-banner-mobile": `url('${baseUrl}/public/banner_img/DSC_7764_mobile.webp')`,
+        "break-banner": `url('${baseUrl}/public/banner_img/DSC_7916.webp')`,
+        "break-banner-mobile": `url('${baseUrl}/public/banner_img/DSC_7916_mobile.webp')`,
       },
       spacing: {
         1: "1rem",
@@ -38,6 +41,7 @@ module.exports = {
     fontFamily: {
       corinthia: ["Corinthia", "cursive"],
       playpen_sans: ["Playpen Sans", "cursive"],
+      montserrat: ["Montserrat", "sans-serif"]
     },
   },
   plugins: [],

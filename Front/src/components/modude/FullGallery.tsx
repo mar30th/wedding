@@ -1,18 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import { FetchGallery } from "../../store/WeddingManage/thunkActions";
 import Fancybox from "../utils/Fancybox";
 import Decoration3 from "../decoration/Decoration3";
+import imagesLoaded from "imagesloaded";
 
 const FullGallery = () => {
   const baseUrl = process.env.REACT_APP_BASE_URL;
   const { galleryList } = useSelector(
     (state: RootState) => state.weddingManage
   );
+  const [imagesAreLoaded, setImagesAreLoaded] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
-
+  const galleryRef = useRef(null)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,13 +25,6 @@ const FullGallery = () => {
     <div>
       <div className="md:w-3/4 mx-auto">
         <div className="mx-auto py-5">
-          {/* <div className="">
-            <img
-              src="https://templates.microweber.com/wedding/userfiles/templates/wedding/assets/img/decoration-3.svg"
-              alt="decoration-3"
-              style={{ maxHeight: "40px", maxWidth: "500px", margin: "auto" }}
-            />
-          </div> */}
           <Decoration3 />
           <button
             type="button"
@@ -43,7 +38,7 @@ const FullGallery = () => {
         </div>
       </div>
       <Fancybox>
-        <div className="container w-3/4 my-5 mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div ref={galleryRef} className="container w-3/4 my-5 mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
           {galleryList?.map((img: { link: string }, index: number) => (
             <div key={index} className="box w-full break-inside-avoid">
               <a

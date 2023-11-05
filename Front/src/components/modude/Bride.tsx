@@ -1,10 +1,8 @@
 import React from "react";
-import p1 from "../../assets/img/1.jpg";
 import { useTranslation } from "react-i18next";
 
 
 const Bride = () => {
-
   const baseUrl = process.env.REACT_APP_BASE_URL;
   const { t, i18n } = useTranslation();
 
@@ -15,11 +13,11 @@ const Bride = () => {
           <img
             src={baseUrl + "/public/avatar_img/bride.webp"}
             alt="Bride picture"
-            className="transform scale-100 hover:opacity-70 transition-transform duration-300 ease-in-out rounded-t md:round-0"
+            className="border border-theme border-b-0 rounded-t lg:rounded lg:border-0"
           />
         </div>
       </div>
-      <div className="flex items-center justify-center text-left p-4 align-self-center allow-drop border border-t-0 border-theme md:border-0">
+      <div className="flex items-center justify-center text-left p-4 align-self-center allow-drop border border-t-0 border-theme rounded-b lg:border-0">
         <div className="child text-center">
           <p>{t("bridePartyTime")}</p>
           <h3 className="text-4xl py-5 text-center">{t("brideParty")}</h3>

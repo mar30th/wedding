@@ -14,14 +14,18 @@ const Gallery = () => {
   return (
     <div className="mx-auto">
       <div className="py-5">
-        <div>
-          {/* <h1 className="text-2xl md:text-5xl md:my-5 my-2 font-semibold">Our Best Moments</h1> */}
-          <h1 className="text-2xl md:text-5xl font-semibold my-4 md:my-12">
+        <div className="text-2xl md:text-5xl font-semibold my-4 md:my-12">
+          <h1 className="text-[22px] lg:text-[35px] font-extrabold tracking-widest text-center font-montserrat my-4 md:my-8">
             Chấn Đông & Bích Phương
           </h1>
         </div>
         <ShowCase />
         <Decoration2 />
+      </div>
+      <div className="">
+        <h1 className="text-4xl font-extrabold tracking-widest text-center font-montserrat my-4 md:my-8">
+          Save The Date
+         </h1>
       </div>
       <Fading />
       <button

@@ -9,7 +9,7 @@ import BackToTop from "./components/utils/BackToTop";
 function App() {
   return (
     <I18nextProvider i18n={i18n}>
-      <div className="App font-playpen_sans">
+      <div className="App font-montserrat">
         <BrowserRouter>
           <Rounter></Rounter>
           <BackToTop />

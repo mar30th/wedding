@@ -48,7 +48,7 @@ const Fading = () => {
         <div
           ref={fadingCarouselRef}
           id="fadingCarousel"
-          className="mb-9 f-carousel lg:grid lg:grid-cols-[360px_1fr] text-slate-700"
+          className="mb-9 f-carousel lg:grid lg:grid-cols-[360px_1fr]"
         >
           <div className="py-4 lg:pr-10 z-10">
             <div className="mx-auto">
