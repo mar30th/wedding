@@ -1,10 +1,10 @@
 [
   {
     "avatar_id": 1,
-    "LINK": "/public/avatar_img/groom.webp"
+    "LINK": "public/avatar_img/groom.webp"
   },
   {
     "avatar_id": 2,
-    "LINK": "/public/avatar_img/bride.webp"
+    "LINK": "public/avatar_img/bride.webp"
   }
 ]

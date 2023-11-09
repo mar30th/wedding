@@ -1,42 +1,42 @@
 [
   {
     "showcase_id": 1,
-    "link": "/showcase_img/showcase_1.webp"
+    "link": "showcase_img/showcase_1.webp"
   },
   {
     "showcase_id": 2,
-    "link": "/showcase_img/showcase_2.webp"
+    "link": "showcase_img/showcase_2.webp"
   },
   {
     "showcase_id": 3,
-    "link": "/showcase_img/showcase_3.webp"
+    "link": "showcase_img/showcase_3.webp"
   },
   {
     "showcase_id": 4,
-    "link": "/showcase_img/showcase_4.webp"
+    "link": "showcase_img/showcase_4.webp"
   },
   {
     "showcase_id": 5,
-    "link": "/showcase_img/showcase_5.webp"
+    "link": "showcase_img/showcase_5.webp"
   },
   {
     "showcase_id": 6,
-    "link": "/showcase_img/showcase_6.webp"
+    "link": "showcase_img/showcase_6.webp"
   },
   {
     "showcase_id": 7,
-    "link": "/showcase_img/showcase_7.webp"
+    "link": "showcase_img/showcase_7.webp"
   },
   {
     "showcase_id": 8,
-    "link": "/showcase_img/showcase_8.webp"
+    "link": "showcase_img/showcase_8.webp"
   },
   {
     "showcase_id": 9,
-    "link": "/showcase_img/showcase_9.webp"
+    "link": "showcase_img/showcase_9.webp"
   },
   {
     "showcase_id": 10,
-    "link": "/showcase_img/showcase_10.webp"
+    "link": "showcase_img/showcase_10.webp"
   }
 ]

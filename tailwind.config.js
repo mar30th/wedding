@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 import banner from  "./public/banner_img/banner.json"
 
-const baseURL = "http://localhost:3000/";
+const baseURL = "https://wedding.dongtran.dev/";
 
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./node_modules/flowbite/**/*.js"],
