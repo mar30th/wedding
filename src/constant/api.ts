@@ -4,7 +4,7 @@ const http = axios.create();
 
 const localStore: Storage = window.localStorage;
 
-export const baseURL = "wedding.dongtran.dev/";
+export const baseURL = "http://localhost:3000/";
 
 http.interceptors.request.use((config: any) => {
     return {

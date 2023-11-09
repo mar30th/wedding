@@ -14,14 +14,11 @@ export const initLoading = (setLoadingProgress: (percent: number) => void) => {
       setLoadingProgress(percent);
     })
     .on("always", (instance: any) => {
-      console.log("always");
     })
     .on("fail", (instance: any) => {
-      console.log("fail");
       hideLoading();
     })
     .on("done", (instance: any) => {
-      console.log("done");
       hideLoading();
     });
 };
