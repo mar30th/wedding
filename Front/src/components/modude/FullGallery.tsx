@@ -1,25 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../../store";
-import { FetchGallery } from "../../store/WeddingManage/thunkActions";
 import Fancybox from "../utils/Fancybox";
 import Decoration3 from "../decoration/Decoration3";
-import imagesLoaded from "imagesloaded";
+import { baseURL } from "../../constant/api";
+import galleryImg from "../../assets/gallery_img/gallery.json"
 
 const FullGallery = () => {
-  const baseUrl = process.env.REACT_APP_BASE_URL;
-  const { galleryList } = useSelector(
-    (state: RootState) => state.weddingManage
-  );
-  const [imagesAreLoaded, setImagesAreLoaded] = useState(false);
-  const dispatch = useDispatch<AppDispatch>();
-  const galleryRef = useRef(null)
+  const galleryList = galleryImg
+  const galleryRef = useRef(null);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    dispatch(FetchGallery());
-  }, [dispatch, galleryList]);
 
   return (
     <div>
@@ -38,15 +27,15 @@ const FullGallery = () => {
         </div>
       </div>
       <Fancybox>
-        <div ref={galleryRef} className="container w-3/4 my-5 mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div
+          ref={galleryRef}
+          className="container w-3/4 my-5 mx-auto grid grid-cols-2 md:grid-cols-4 gap-4"
+        >
           {galleryList?.map((img: { link: string }, index: number) => (
             <div key={index} className="box w-full break-inside-avoid">
-              <a
-                data-fancybox="gallery"
-                href={baseUrl + img.link}
-              >
+              <a data-fancybox="gallery" href={baseURL + img.link}>
                 <img
-                  src={baseUrl + img.link}
+                  src={baseURL + img.link}
                   alt={`img`}
                   className="max-w-full rounded-2xl hover:opacity-80"
                 />

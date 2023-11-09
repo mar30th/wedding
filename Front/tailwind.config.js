@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-const baseUrl = process.env.REACT_APP_BASE_URL;
+import banner from  "./public/banner_img/banner.json"
+
+const baseURL = "http://localhost:3000/";
+
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./node_modules/flowbite/**/*.js"],
   theme: {
@@ -21,10 +24,10 @@ module.exports = {
         },
       },
       backgroundImage: {
-        "main-banner": `url('${baseUrl}/public/banner_img/DSC_7764.webp')`,
-        "main-banner-mobile": `url('${baseUrl}/public/banner_img/DSC_7764_mobile.webp')`,
-        "break-banner": `url('${baseUrl}/public/banner_img/DSC_7916.webp')`,
-        "break-banner-mobile": `url('${baseUrl}/public/banner_img/DSC_7916_mobile.webp')`,
+        "main-banner": `url('${baseURL}/banner_img/DSC_7764.webp')`,
+        "main-banner-mobile": `url('${baseURL}/banner_img/DSC_7764_mobile.webp')`,
+        "break-banner": `url('${baseURL}/banner_img/DSC_7916.webp')`,
+        "break-banner-mobile": `url('${baseURL}/banner_img/DSC_7916_mobile.webp')`,
       },
       spacing: {
         1: "1rem",

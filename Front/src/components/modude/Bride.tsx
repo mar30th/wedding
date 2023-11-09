@@ -1,9 +1,9 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { baseURL } from "../../constant/api";
 
 
 const Bride = () => {
-  const baseUrl = process.env.REACT_APP_BASE_URL;
   const { t, i18n } = useTranslation();
 
   return (
@@ -11,7 +11,7 @@ const Bride = () => {
       <div className="md:col-span-1">
         <div className="">
           <img
-            src={baseUrl + "/public/avatar_img/bride.webp"}
+            src={baseURL + "/avatar_img/bride.webp"}
             alt="Bride picture"
             className="border border-theme border-b-0 rounded-t lg:rounded lg:border-0"
           />

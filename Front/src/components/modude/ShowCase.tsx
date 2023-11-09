@@ -3,28 +3,16 @@ import "@fancyapps/ui/dist/carousel/carousel.css";
 import "./css/showcase.css";
 import { Carousel } from "@fancyapps/ui";
 import Fancybox from "../utils/Fancybox";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../../store";
-import { FetchShowcase } from "../../store/WeddingManage/thunkActions";
 import { mapRange } from "../utils/mapRange";
+import { baseURL } from "../../constant/api";
+import showcaseImg from "../../assets/showcase_img/showcase.json"
 
 const ShowCase = () => {
-  const baseUrl = process.env.REACT_APP_BASE_URL;
-
-  const { showcaseList } = useSelector(
-    (state: RootState) => state.weddingManage
-  );
+  const showcaseList = showcaseImg
   const showCaseCarouselRef = useRef(null);
-
-  const dispatch = useDispatch<AppDispatch>();
-
-  useEffect(() => {
-    dispatch(FetchShowcase());
-  }, [dispatch]);
 
   useEffect(() => {
     if (
-      showcaseList &&
       showcaseList.length > 0 &&
       showCaseCarouselRef.current
     ) {
@@ -63,13 +51,13 @@ const ShowCase = () => {
         >
           {showcaseList?.map((img, index) => (
             <div key={index} className="f-carousel__slide">
-              <a data-fancybox="gallery" href={baseUrl + img.link}>
+              <a data-fancybox="gallery" href={baseURL + img.link}>
                 <img
                   className="hover:opacity-80 transition-color duration-300"
                   width="640"
                   height="640"
                   alt=""
-                  data-lazy-src={baseUrl + img.link}
+                  data-lazy-src={baseURL + img.link}
                 />
               </a>
             </div>

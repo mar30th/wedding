@@ -4,14 +4,14 @@ const http = axios.create();
 
 const localStore: Storage = window.localStorage;
 
-const baseURL = "http://localhost:8080/";
+export const baseURL = "http://localhost:3000/";
 
 http.interceptors.request.use((config: any) => {
     return {
         ...config,
         headers: {
         },
-        // baseURL
+        baseURL
     };
 })
 

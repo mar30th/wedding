@@ -1,7 +1,5 @@
 import React from "react";
-import P1 from "../../assets/img/banner.jpg";
 import { useNavigate } from "react-router-dom";
-import Fancybox from "../utils/Fancybox";
 import ShowCase from "./ShowCase";
 import Fading from "./Fading";
 import Decoration2 from "../decoration/Decoration2";

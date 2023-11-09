@@ -1,15 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/img/logo3.png";
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "../store";
 import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
   
   const navigate = useNavigate();
-  const dispatch = useDispatch<AppDispatch>();
 
   const handleLanguage = () => {
     const currentLanguage = i18n.language;

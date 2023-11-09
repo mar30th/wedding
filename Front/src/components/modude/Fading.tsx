@@ -2,25 +2,16 @@ import React, { useEffect, useRef } from "react";
 import Fancybox from "../utils/Fancybox";
 import { Carousel } from "@fancyapps/ui";
 import "./css/fading.css";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../../store";
-import { FetchFading } from "../../store/WeddingManage/thunkActions";
 import { mapRange } from "../utils/mapRange";
+import { baseURL } from "../../constant/api";
+import fadingImg from "../../assets/fading_img/fading_img.json"
 
 const Fading = () => {
-  const baseUrl = process.env.REACT_APP_BASE_URL;
-
-  const { fadingList } = useSelector((state: RootState) => state.weddingManage);
+  const fadingList = fadingImg;
   const fadingCarouselRef = useRef(null);
 
-  const dispatch = useDispatch<AppDispatch>();
-
   useEffect(() => {
-    dispatch(FetchFading());
-  }, [dispatch]);
-
-  useEffect(() => {
-    if (fadingList && fadingList.length > 0 && fadingCarouselRef.current) {
+    if (fadingList.length > 0 && fadingCarouselRef.current) {
       new Carousel(fadingCarouselRef.current, {
         Dots: false,
         Navigation: false,
@@ -63,13 +54,13 @@ const Fading = () => {
               <p className="font-serif text-3xl">
                 <button
                   data-carousel-prev
-                  className="px-3 mr-1 h-10 bg-theme text-white font-semibold border hover:bg-white hover:border-theme hover:text-theme rounded-md leading-none transition-color duration-300"
+                  className="btnA px-3 mr-1 h-10 bg-theme text-white font-semibold border hover:bg-white hover:border-theme hover:text-theme rounded-md leading-none transition-color duration-300"
                 >
                   ←
                 </button>
-                <button
+                <button 
                   data-carousel-next
-                  className="px-3 h-10 bg-theme text-white font-semibold border hover:bg-white hover:border-theme hover:text-theme rounded-md leading-none transition-color duration-300"
+                  className="btnB px-3 h-10 bg-theme text-white font-semibold border hover:bg-white hover:border-theme hover:text-theme rounded-md leading-none transition-color duration-300"
                 >
                   →
                 </button>
@@ -91,12 +82,12 @@ const Fading = () => {
                 <div className="f-carousel__track items-baseline">
                   {fadingList?.map((img: { link: string }, index: number) => (
                     <figure key={index} className="f-carousel__slide">
-                      <a data-fancybox="gallery" href={baseUrl + img.link}>
+                      <a data-fancybox="gallery" href={baseURL + img.link}>
                         <img
                           className="mb-4 w-full rounded-lg hover:opacity-80 transition-color duration-300"
                           width={300}
                           height={400}
-                          src={baseUrl + img.link}
+                          src={baseURL + img.link}
                           alt={img.link}
                         />
                       </a>

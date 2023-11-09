@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
 import "./modude/css/loading.css";
 import { hideLoading, initLoading } from "./utils/initLoading";
 

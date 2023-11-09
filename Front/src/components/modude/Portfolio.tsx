@@ -1,9 +1,6 @@
 import React from "react";
-import p1 from "../../assets/img/1.jpg";
-import p2 from "../../assets/img/2.jpg";
 import Groom from "./Groom";
 import Bride from "./Bride";
-import ShowCase from "./ShowCase";
 import { useTranslation } from "react-i18next";
 import Decoration1 from "../decoration/Decoration1";
 import Decoration3 from "../decoration/Decoration3";
