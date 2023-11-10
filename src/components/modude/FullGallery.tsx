@@ -27,7 +27,12 @@ const FullGallery = () => {
           </button>
         </div>
       </div>
-      <Fancybox>
+      <Fancybox
+      options={{
+        Thumbs: {
+          type: "none",
+        },
+      }}>
         <div
           ref={galleryRef}
           className="container w-3/4 my-5 mx-auto grid grid-cols-2 md:grid-cols-4 gap-4"

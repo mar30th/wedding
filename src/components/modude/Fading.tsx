@@ -73,9 +73,6 @@ const Fading = () => {
                 Carousel: {
                   infinite: true,
                 },
-                Thumbs: {
-                  type: "none",
-                },
               }}
             >
               <div className="f-carousel__viewport lg:pl-[360px]">
