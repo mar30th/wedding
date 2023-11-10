@@ -7,7 +7,6 @@ import { Analytics } from '@vercel/analytics/react';
 const MainLayout = () => {
   return (
     <div>
-        {/* <Header /> */}
         <Outlet />
         <Footer />
         <Analytics />
