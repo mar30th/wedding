@@ -42,7 +42,12 @@ const ShowCase = () => {
   }, [showcaseList]);
 
   return (
-    <Fancybox>
+    <Fancybox
+    options={{
+      Thumbs: {
+        type: "none",
+      },
+    }}>
       <div className="p-4">
         <div
           className="f-carousel"
