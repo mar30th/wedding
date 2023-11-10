@@ -37,6 +37,7 @@ const FullGallery = () => {
                 <img
                   src={baseURL + img.link}
                   alt={`img`}
+                  loading="lazy"
                   className="max-w-full rounded-2xl hover:opacity-80"
                 />
               </a>

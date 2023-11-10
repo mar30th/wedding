@@ -89,6 +89,7 @@ const Fading = () => {
                           height={400}
                           src={baseURL + img.link}
                           alt={img.link}
+                          loading="lazy"
                         />
                       </a>
                     </figure>

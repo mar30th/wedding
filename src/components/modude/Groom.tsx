@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { baseURL } from "../../constant/api";
 
 const Groom = () => {
   const { t, i18n } = useTranslation();
-
   return (
     <div className="parent grid px-4 md:grid-cols-2 md:px-0">
       <div className="md:col-span-1 md:order-last">

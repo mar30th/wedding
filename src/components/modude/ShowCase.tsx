@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "@fancyapps/ui/dist/carousel/carousel.css";
 import "./css/showcase.css";
 import { Carousel } from "@fancyapps/ui";
@@ -56,7 +56,7 @@ const ShowCase = () => {
                   className="hover:opacity-80 transition-color duration-300"
                   width="640"
                   height="640"
-                  alt=""
+                  alt="showcaseImg"
                   data-lazy-src={baseURL + img.link}
                 />
               </a>
