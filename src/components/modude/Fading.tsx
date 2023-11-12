@@ -43,8 +43,6 @@ const Fading = () => {
                   className="px-3 mr-1 py-[10px] bg-theme text-white font-semibold border hover:bg-white border-theme hover:text-theme rounded-md leading-none transition-color duration-300"/>
 
                   <RightOutlined 
-                  onClick={() => {console.log("ok");
-                  }}
                   data-carousel-next
                   className="px-3 py-[10px] bg-theme text-white font-semibold border hover:bg-white border-theme hover:text-theme rounded-md leading-none transition-color duration-300"
                   />

@@ -19,7 +19,7 @@ const FullGallery = () => {
           <Decoration3 />
           <button
             type="button"
-            className="my-4 bg-theme text-white font-semibold py-4 px-9 focus:outline-none rounded-full border hover:bg-white hover:text-white hover:border-theme"
+            className="my-4 bg-theme text-white font-semibold py-4 px-9 focus:outline-none rounded-full border hover:bg-white hover:text-theme hover:border-theme"
             onClick={() => {
               navigate("/");
             }}
