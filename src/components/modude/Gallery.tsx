@@ -11,7 +11,7 @@ const Gallery = () => {
   const navigate = useNavigate();
   return (
     <div className="mx-auto">
-      <div className="py-5">
+      {/* <div className="py-5">
         <div className="text-2xl md:text-5xl font-semibold my-4 md:my-12">
           <h1 className="text-[22px] lg:text-[35px] font-extrabold tracking-widest text-center font-montserrat my-4 md:my-8">
             Chấn Đông & Bích Phương
@@ -19,7 +19,7 @@ const Gallery = () => {
         </div>
         <ShowCase />
         <Decoration2 />
-      </div>
+      </div> */}
       <div className="">
         <h1 className="text-4xl font-extrabold tracking-widest text-center font-montserrat my-4 md:my-8">
           Save The Date

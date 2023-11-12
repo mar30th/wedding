@@ -4,6 +4,7 @@ import Fancybox from "../utils/Fancybox";
 import Decoration3 from "../decoration/Decoration3";
 import { baseURL } from "../../constant/api";
 import galleryImg from "../../assets/gallery_img/gallery.json"
+import Loading from "../Loading";
 
 const FullGallery = () => {
   const galleryList = galleryImg
@@ -27,6 +28,7 @@ const FullGallery = () => {
           </button>
         </div>
       </div>
+      <Loading />
       <Fancybox
       options={{
         Thumbs: {
