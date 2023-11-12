@@ -25,7 +25,7 @@ const Groom = () => {
           <img
             src={baseURL + "/avatar_img/groom.webp"}
             alt="Groom picture"
-            className="transform scale-100 ease-in-out rounded-t md:round-0 border border-theme border-b-0 lg:border-0 lg:rounded"
+            className="transform scale-100 ease-in-out rounded-t md:round-0 border border-theme border-b-0 md:border-0 md:rounded"
           />
         </div>
       </div>

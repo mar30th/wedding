@@ -18,7 +18,7 @@ const Fading = () => {
 
   return (
     <div>
-      <h1 className="text-4xl font-extrabold tracking-widest text-center font-montserrat my-4 md:my-8">
+      <h1 className="text-4xl font-extrabold tracking-widest text-center font-montserrat my-4">
         Save The Date
       </h1>
       <div className="p-4">

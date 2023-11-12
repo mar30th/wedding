@@ -2,10 +2,11 @@ import React from "react";
 
 const Decoration1 = () => {
   return (
-    <div className="pt-10">
+    <div className="py-3">
       <img
         src="https://templates.microweber.com/wedding/userfiles/templates/wedding/assets/img/decoration-1.svg"
-        style={{ maxHeight: "40px", maxWidth: "500px", margin: "auto" }}
+        alt="decoration-1"
+        className="max-h-[40px] max-w-[500px] m-auto w-3/4 md:w-full"
       ></img>
     </div>
   );
